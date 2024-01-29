@@ -1,9 +1,9 @@
 import { client } from "../client";
-import { gql } from "@apollo/client";
+import { gql } from "@/graphql/__generated__";
 
 export const getStations = async () => {
   const { data } = await client.query({
-    query: gql`
+    query: gql(`
       query getStations {
         stations {
           content {
@@ -13,7 +13,7 @@ export const getStations = async () => {
           }
         }
       }
-    `,
+    `),
   });
 
   return data;
