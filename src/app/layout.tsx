@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,38 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+        var wp_pp_gemius_identifier = 'coWacc7R.xHk.xzhRC.LgpQJ38OGWzuyOAxvi8UATAr.s7';
+        var wp_sn = 'sg';
+        var rekid = '7757';
+        var wp_dot_type = 'click';`,
+        }}
+      />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+          WP.push(() => WP.stat.setDarkMode(true));
+          WP.push(() => document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+              return false ||0==WP.cookie.get("ATT_IOS")||0==WP.cookie.get("ATT_AOS")||(WP.gdpr.get("ua")||WP.gdpr.check("mr","TP"))&&WP.gdpr.getConsentString()&&WP.gdpr.getHoldingState().keybase||WP.gdpr.showConsentForm();
+            }, 50);
+          }));
+        `,
+        }}
+      />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+         var instancja = new WP.player({url:'wp.tv/?mid=2003054', target:"uniqueId", mediaEmbed:'gallery'})
+         window.addEventListener("NEW_WPPLAYER", function(e){ console.log('NOWY') });
+
+        `,
+        }}
+      />
+      <Script src="https://std.wpcdn.pl/wpjslib/wpjslib-sgap.js" />
+      <Script src="https://std.wpcdn.pl/wpjslib6/wpjslib-sgap.js" />
     </html>
   );
 }
