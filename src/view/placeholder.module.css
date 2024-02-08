@@ -1,0 +1,61 @@
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: min(100% - 2.5rem, 100%);
+}
+
+.info > div {
+  flex: 1 1;
+}
+
+
+.info > div h2 {
+  font-size: var(--ofm-size-16-36);
+}
+
+.info > div p {
+  margin-block: 1.5rem 2rem;
+  font-size: var(--fluid-14-24);
+}
+
+.info > div ul a {
+  width: 11.9375rem;
+}
+
+.info > img {
+  max-width: 50%;
+  height: auto;
+}
+
+@media screen and (max-width: 62.625rem) {
+  .info > div :is(h2, p, ul) {
+    width: 100%;
+    text-align: center;
+  }
+
+  .info > div ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .info > img {
+    max-width : 100%;
+    height: auto;
+  }
+
+  .info > div {
+    order: 1;
+  }
+
+  .info > div ul li {
+    flex: 1 0 100%;
+  }
+  .info > div ul li a {
+    width: 100%;
+  }
+}

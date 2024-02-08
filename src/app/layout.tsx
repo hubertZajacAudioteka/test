@@ -30,6 +30,9 @@ export default function RootLayout({
       <Script
         dangerouslySetInnerHTML={{
           __html: `
+          var WP = [];
+          var wp_sn = 'sg';
+          var wp_pp_gemius_identifier = 'coWacc7R.xHk.xzhRC.LgpQJ38OGWzuyOAxvi8UATAr.s7';
           WP.push(() => WP.stat.setDarkMode(true));
           WP.push(() => document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
@@ -39,15 +42,7 @@ export default function RootLayout({
         `,
         }}
       />
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-         var instancja = new WP.player({url:'wp.tv/?mid=2003054', target:"uniqueId", mediaEmbed:'gallery'})
-         window.addEventListener("NEW_WPPLAYER", function(e){ console.log('NOWY') });
 
-        `,
-        }}
-      />
       <Script src="https://std.wpcdn.pl/wpjslib/wpjslib-sgap.js" />
       <Script src="https://std.wpcdn.pl/wpjslib6/wpjslib-sgap.js" />
     </html>
