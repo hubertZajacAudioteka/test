@@ -5,7 +5,11 @@
 import { playerConfig } from "@/configs/playerConfig";
 import React, { useEffect, useRef } from "react";
 
-const Player = () => {
+interface Props {
+  stations: GetStationsQuery;
+}
+
+const Player = ({ stations }: Props) => {
   const playerContainer = useRef<HTMLDivElement>(null);
   const player = useRef(null);
 
@@ -30,16 +34,19 @@ const Player = () => {
   //   };
   // }, []);
 
-  useEffect(()=>{
-    window.WP?.push(()=>{
-      window.WP.player( playerConfig)
-    })
-    console.log(window.WP?.player)
+  useEffect(() => {
+    window.WP?.push(() => {
+      window.WP.player(playerConfig);
+    });
+    console.log(window.WP?.player);
+  }, []);
 
-  },[])
+  console.log("STATIONS", stations);
+
   return (
     <div ref={playerContainer} id="ofm-player">
       Player
+      <button>Change</button>
     </div>
   );
 };
