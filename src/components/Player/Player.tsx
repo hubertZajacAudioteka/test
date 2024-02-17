@@ -2,46 +2,30 @@
 
 "use client";
 
-import { playerConfig } from "@/configs/playerConfig";
+import { PlayerConfig } from "@/configs/playerConfig";
 import React, { useEffect, useRef } from "react";
 
 interface Props {
-  stations: GetStationsQuery;
+  playerConfig: PlayerConfig;
+  url?: string;
 }
 
-const Player = ({ stations }: Props) => {
+const Player = ({ playerConfig, url }: Props) => {
   const playerContainer = useRef<HTMLDivElement>(null);
   const player = useRef(null);
 
-  // useEffect(() => {
-  //   // @ts-ignore
-  //   player.current =
-  //     //@ts-ignore
-  //     window.WP?.player &&
-  //     //@ts-ignore
-  //     window.WP?.player({
-  //       target: `#ofm-player`,
-  //       url: "http://get.wp.tv/?mid=1754079",
-  //       customShakaVersion: "4.1.2",
-  //       floatingplayer: false,
-  //     });
-
-  //   return () => {
-  //     try {
-  //       //@ts-ignore
-  //       player?.current?.destroy();
-  //     } catch (ex) {}
-  //   };
-  // }, []);
+  if (url) {
+    playerConfig.url = url;
+  }
 
   useEffect(() => {
     window.WP?.push(() => {
-      window.WP.player(playerConfig);
+      window.WP?.player(playerConfig);
+      window.WP?.player?.setClipData({ streamType: "audio" });
     });
-    console.log(window.WP?.player);
-  }, []);
 
-  console.log("STATIONS", stations);
+    console.log(playerConfig)
+  }, []);
 
   return (
     <div ref={playerContainer} id="ofm-player">

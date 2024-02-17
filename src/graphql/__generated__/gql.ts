@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "\n      query GetStation($id: Int!) {\n        station(id: $id) {\n          name\n          slug\n          streamUrl\n          currentSong\n          playlist {\n            title\n            length\n            album {\n              title\n            }\n            artists {\n              id\n              name\n            }\n          }\n        }\n      }\n    ": types.GetStationDocument,
     "\n      query getStations {\n        stations {\n          content {\n            id\n            name\n            description\n          }\n        }\n      }\n    ": types.GetStationsDocument,
 };
 
@@ -30,6 +31,10 @@ const documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n      query GetStation($id: Int!) {\n        station(id: $id) {\n          name\n          slug\n          streamUrl\n          currentSong\n          playlist {\n            title\n            length\n            album {\n              title\n            }\n            artists {\n              id\n              name\n            }\n          }\n        }\n      }\n    "): (typeof documents)["\n      query GetStation($id: Int!) {\n        station(id: $id) {\n          name\n          slug\n          streamUrl\n          currentSong\n          playlist {\n            title\n            length\n            album {\n              title\n            }\n            artists {\n              id\n              name\n            }\n          }\n        }\n      }\n    "];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

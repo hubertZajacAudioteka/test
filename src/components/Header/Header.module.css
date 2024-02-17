@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+}
+
+.menu {
+    display: flex;
+    gap: 1.5rem;
+}
+

@@ -7,7 +7,7 @@ export default async function PlayerPage() {
   return (
     <div>
       <h2>Player</h2>
-      <Player stations={stations} />
+      {/* <Player /> */}
     </div>
   );
 }

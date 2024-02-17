@@ -1,4 +1,4 @@
-interface PlayerConfig {
+export interface PlayerConfig {
   adv: boolean;
   autoplay: boolean;
   advVastDuration: number;
@@ -37,5 +37,6 @@ export const playerConfig: PlayerConfig = {
   skin: "skinDefault",
   target: `#ofm-player`,
   statid:'test',
-  url:'http://get.wp.tv/?mid=1754079'
+  // url:'http://get.wp.tv/?mid=1754079'
+  url:'https://openfm-stream-devel.kube.dev.dcwp.pl/OFM96/ngrp:standard/playlist.m3u8'
 };

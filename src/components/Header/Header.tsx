@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import React, { memo } from "react";
+import styles from './Header.module.css'
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
       <h2>Open fm</h2>
       <nav>
-        <ul>
+        <ul className={styles.menu}>
           <li>
             <Link href='/muzyka'>muzyka</Link>
           </li>
